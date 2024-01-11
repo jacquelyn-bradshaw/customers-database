@@ -1,6 +1,6 @@
 USE customers;
 
-/* A stored procedure that finds all the customers based in London
+/* A stored procedure that finds all the customers based in a city
 and returns their first and last names */
 
 DELIMITER //
