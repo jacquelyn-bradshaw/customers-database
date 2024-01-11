@@ -1,5 +1,10 @@
 USE customer;
 
+/* A stored function that accepts the total number of orders
+per customer as a parameter and then assesses whether they are
+eligible for a discount.
+*/
+
 DELIMITER //
 CREATE FUNCTION is_eligible(count_orders INT)
 RETURNS CHAR(10)
@@ -12,6 +17,9 @@ BEGIN
     RETURN customer_status;
     END //
 DELIMITER ;
+
+/* Use the is_eligible function on the customer_details and orders
+tables to show which customers are eligible for a discount */
 
 SELECT customer_id,
 COUNT(orders_customer_id) AS count_orders,
